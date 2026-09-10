@@ -108,7 +108,7 @@ export const AvatarStage: React.FC<AvatarStageProps> = ({
         <div className="absolute inset-0 flex items-center justify-center">
           <DefaultAgentIntro
             onStartConversation={onRetry}
-            isLoading={conversationState === 'initializing'}
+            isLoading={false}
           />
         </div>
       )}
