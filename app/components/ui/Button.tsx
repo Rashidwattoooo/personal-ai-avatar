@@ -21,7 +21,7 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const base =
-    'relative inline-flex items-center justify-center font-semibold tracking-wide transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508] disabled:opacity-40 disabled:cursor-not-allowed select-none rounded-xl';
+    'relative inline-flex items-center justify-center font-semibold tracking-wide transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:opacity-40 disabled:cursor-not-allowed select-none rounded-lg';
 
   const sizes = {
     sm: 'text-xs px-4 py-2 gap-1.5',
@@ -31,10 +31,10 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variants: Record<string, string> = {
     neon:    'btn-neon shadow-neon-cyan hover:shadow-neon-violet',
-    outline: 'bg-transparent border border-brand-cyan/40 text-brand-cyan hover:bg-brand-cyan/10 hover:border-brand-cyan hover:shadow-neon-cyan',
-    ghost:   'bg-transparent text-[#8892a4] hover:text-white hover:bg-white/5',
-    danger:  'bg-rose-600/90 hover:bg-rose-500 text-white border border-rose-500/40 hover:shadow-[0_0_24px_rgba(244,63,94,0.35)]',
-    glass:   'bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-white/20 backdrop-blur-md',
+    outline: 'bg-white border border-brand-cyan/40 text-brand-cyan hover:bg-brand-cyan/8 hover:border-brand-cyan',
+    ghost:   'bg-transparent text-ink-muted hover:text-ink hover:bg-surface-hover',
+    danger:  'bg-rose-600 hover:bg-rose-500 text-white border border-rose-500/40 hover:shadow-[0_6px_20px_rgba(244,63,94,0.28)]',
+    glass:   'bg-white hover:bg-surface-hover text-ink border border-surface-border hover:border-brand-cyan/40 backdrop-blur-md',
   };
 
   return (

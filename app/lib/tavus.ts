@@ -9,6 +9,7 @@ export interface CreateConversationOptions {
   documentIds?: string[];
   documentRetrievalStrategy?: 'balanced' | 'speed' | 'quality';
   customGreeting?: string;
+  conversationalContext?: string;
   conversationName?: string;
 }
 
@@ -22,7 +23,8 @@ export async function createTavusConversation(
     documentIds = [],
     documentRetrievalStrategy = 'balanced',
     customGreeting,
-    conversationName = 'Personal AI Avatar Assistant Demo',
+    conversationalContext,
+    conversationName = 'Agentix System AI Assistant',
   } = options;
 
   const payload: Record<string, unknown> = {
@@ -37,6 +39,10 @@ export async function createTavusConversation(
 
   if (customGreeting && customGreeting.trim()) {
     payload.custom_greeting = customGreeting.trim();
+  }
+
+  if (conversationalContext && conversationalContext.trim()) {
+    payload.conversational_context = conversationalContext.trim();
   }
 
   if (documentIds.length > 0) {

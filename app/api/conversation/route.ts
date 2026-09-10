@@ -47,7 +47,8 @@ export async function POST(req: NextRequest) {
       documentIds: documentIdsOverride ?? config.documentIds,
       documentRetrievalStrategy: strategyOverride ?? config.documentRetrievalStrategy,
       customGreeting: customGreetingOverride ?? config.customGreeting,
-      conversationName: `Demo Session - ${new Date().toISOString()}`,
+      conversationalContext: config.conversationalContext,
+      conversationName: `Agentix Session - ${new Date().toISOString()}`,
     });
 
     return NextResponse.json({

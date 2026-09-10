@@ -2,16 +2,16 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Personal AI Avatar | Real-Time Conversational Intelligence',
+  title: 'Agentix System | AI Automation Agent',
   description:
-    'Meet your Personal AI Avatar — a photorealistic digital human powered by real-time voice, RAG knowledge retrieval, and multimodal camera vision.',
-  keywords: ['AI Avatar', 'Conversational AI', 'Digital Human', 'RAG', 'Tavus CVI', 'AI Assistant'],
+    'Meet the Agentix System AI avatar — a photorealistic digital human that explains our AI automation and Sham Marianas creative services, powered by real-time voice and RAG knowledge.',
+  keywords: ['Agentix System', 'AI Automation', 'AI Agents', 'Sham Marianas', 'Conversational AI', 'Digital Human', 'RAG'],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
-      <body className="bg-[#050508] text-[#f0f4ff] antialiased overflow-x-hidden selection:bg-cyan-500/20 selection:text-cyan-200">
+    <html lang="en">
+      <body className="bg-white text-ink antialiased overflow-x-hidden selection:bg-brand-cyan/20 selection:text-brand-cyan">
         {children}
       </body>
     </html>

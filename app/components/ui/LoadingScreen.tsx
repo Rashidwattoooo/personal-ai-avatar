@@ -15,7 +15,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({
   return (
     <div className="absolute inset-0 z-30 flex flex-col items-center justify-center p-8 rounded-3xl overflow-hidden">
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-[#050508]/90 backdrop-blur-2xl" />
+      <div className="absolute inset-0 bg-white/90 backdrop-blur-2xl" />
 
       {/* Ambient orbs */}
       <div className="orb orb-cyan  w-64 h-64 top-0   left-1/4  opacity-50 animate-[float_8s_ease-in-out_infinite]" />
@@ -41,16 +41,16 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({
           Tavus CVI · Live Session
         </div>
 
-        <h3 className="text-xl font-bold text-white mb-2 tracking-tight">{title}</h3>
-        <p className="text-sm text-[#8892a4] max-w-xs mb-6 leading-relaxed">{message}</p>
+        <h3 className="text-xl font-bold text-ink mb-2 tracking-tight">{title}</h3>
+        <p className="text-sm text-ink-muted max-w-xs mb-6 leading-relaxed">{message}</p>
 
         <div className="flex items-center gap-3">
           <Loader2 className="w-4 h-4 animate-spin text-brand-cyan" />
-          <span className="text-xs text-[#8892a4]">Negotiating peer stream...</span>
+          <span className="text-xs text-ink-muted">Negotiating peer stream...</span>
           {onCancel && (
             <button
               onClick={onCancel}
-              className="ml-2 text-xs text-[#8892a4] hover:text-white underline underline-offset-2 transition-colors"
+              className="ml-2 text-xs text-ink-muted hover:text-ink underline underline-offset-2 transition-colors"
             >
               Cancel
             </button>

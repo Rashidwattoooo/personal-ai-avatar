@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { AvatarStage } from './components/avatar/AvatarStage';
@@ -255,42 +256,84 @@ export default function Home() {
               onReset={handleReset}
             />
 
-            {/* Controls + Diagnostics */}
+            {/* Session Controls */}
             <DemoControls
               conversationState={conversationState}
               isMicMuted={isMicMuted}
               onToggleMic={() => setIsMicMuted((p) => !p)}
               onStartCall={handleStartConversation}
               onEndCall={handleEndConversation}
-              configStatus={configStatus}
             />
           </div>
         </div>
       </main>
 
       {/* ── FOOTER ── */}
-      <footer className="relative z-10 border-t border-white/[0.06] bg-[#050508]/60 backdrop-blur-xl py-6">
-        <div className="max-w-6xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#8892a4]">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-lg bg-gradient-to-tr from-brand-cyan to-brand-violet flex items-center justify-center">
-              <svg width="12" height="12" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="7" r="3.5" fill="white" fillOpacity="0.9" />
-                <path
-                  d="M3 18c0-3.87 3.13-7 7-7s7 3.13 7 7"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeOpacity="0.9"
-                />
-              </svg>
+      <footer className="relative z-10 border-t border-surface-border bg-surface-subtle">
+        <div className="max-w-6xl mx-auto px-4 sm:px-8 py-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Brand column */}
+            <div className="lg:col-span-1">
+              <Image
+                src="/images/brands/agentix-logo.png"
+                alt="Agentix System"
+                width={150}
+                height={41}
+                className="h-8 w-auto object-contain mb-4"
+              />
+              <p className="text-xs text-ink-muted leading-relaxed max-w-xs">
+                Custom AI automation agents for sales, support, and operations — keeping your business running 24/7 with minimal human intervention.
+              </p>
             </div>
-            <span className="font-semibold text-white">AI Avatar Assistant</span>
-            <span>·</span>
-            <span>Interactive Client Demo</span>
+
+            {/* Agentix services */}
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-widest text-ink mb-4">Agentix System</h4>
+              <ul className="space-y-2.5 text-sm text-ink-muted">
+                <li>AI Automation Agents</li>
+                <li>Sales &amp; Support Automation</li>
+                <li>Workflow &amp; Ops Integration</li>
+                <li>
+                  <a href="https://agentixsystem.com" target="_blank" rel="noopener noreferrer" className="text-brand-cyan hover:underline font-medium">
+                    agentixsystem.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Sham Marianas services */}
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-widest text-ink mb-4">Sham Marianas</h4>
+              <ul className="space-y-2.5 text-sm text-ink-muted">
+                <li>Branding &amp; Brand Design</li>
+                <li>UI / UX Design</li>
+                <li>Advertising &amp; Creative</li>
+                <li>
+                  <a href="https://shammarianas.com" target="_blank" rel="noopener noreferrer" className="text-brand-cyan hover:underline font-medium">
+                    shammarianas.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Assistant / capabilities */}
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-widest text-ink mb-4">AI Assistant</h4>
+              <ul className="space-y-2.5 text-sm text-ink-muted">
+                <li>Real-time voice conversation</li>
+                <li>RAG knowledge on both brands</li>
+                <li>Live camera vision &amp; cues</li>
+              </ul>
+            </div>
           </div>
-          <span className="text-[11px]">
-            Powered by <span className="text-brand-cyan font-medium">Tavus CVI</span> &amp; RAG Architecture
-          </span>
+
+          {/* Bottom bar */}
+          <div className="mt-10 pt-6 border-t border-surface-border flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-muted">
+            <span>© {new Date().getFullYear()} Agentix System · In partnership with Sham Marianas F.Z.C, Dubai</span>
+            <span className="text-[11px]">
+              Powered by <span className="text-brand-cyan font-medium">Tavus CVI</span> &amp; RAG Architecture
+            </span>
+          </div>
         </div>
       </footer>
 

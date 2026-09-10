@@ -9,31 +9,39 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Montserrat', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"Space Grotesk"', 'Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
+        // Agentix System brand palette (purple primary, green secondary)
         brand: {
-          cyan:   '#00e5ff',
-          violet: '#7c3aed',
-          purple: '#a855f7',
-          blue:   '#3b82f6',
+          cyan:   '#6c5ce7', // primary purple
+          violet: '#4b3fc4', // deep purple (gradient depth)
+          purple: '#8b7cf0', // light purple
+          blue:   '#0f9d67', // green secondary accent
+        },
+        ink: {
+          DEFAULT: '#14161c', // primary text
+          muted:   '#5b6472', // muted text
+          faint:   '#8a92a1', // faint text
         },
         surface: {
-          DEFAULT: '#0a0a0f',
-          card:    '#0c0c14',
-          border:  '#1a1a2e',
-          hover:   '#141420',
+          DEFAULT: '#ffffff',
+          card:    '#ffffff',
+          border:  '#e6e8ee',
+          hover:   '#f4f5f8',
+          subtle:  '#f6f7f9',
         },
       },
       backgroundImage: {
-        'gradient-brand':   'linear-gradient(135deg, #00e5ff 0%, #7c3aed 100%)',
-        'gradient-card':    'linear-gradient(180deg, #0e0e18 0%, #080810 100%)',
-        'gradient-hero':    'radial-gradient(ellipse 80% 60% at 50% -10%, rgba(124,58,237,0.20) 0%, transparent 70%)',
+        'gradient-brand':   'linear-gradient(135deg, #6c5ce7 0%, #4b3fc4 100%)',
+        'gradient-card':    'linear-gradient(180deg, #ffffff 0%, #f6f7f9 100%)',
+        'gradient-hero':    'radial-gradient(ellipse 80% 60% at 50% -10%, rgba(108,92,231,0.10) 0%, transparent 70%)',
       },
       boxShadow: {
-        'neon-cyan':   '0 0 24px 0 rgba(0,229,255,0.25), 0 0 64px 0 rgba(0,229,255,0.10)',
-        'neon-violet': '0 0 24px 0 rgba(124,58,237,0.35), 0 0 64px 0 rgba(124,58,237,0.12)',
-        'card-glow':   '0 2px 40px 0 rgba(0,0,0,0.6), inset 0 1px 0 0 rgba(255,255,255,0.04)',
+        'neon-cyan':   '0 8px 24px 0 rgba(108,92,231,0.22), 0 2px 8px 0 rgba(108,92,231,0.10)',
+        'neon-violet': '0 8px 24px 0 rgba(75,63,196,0.22), 0 2px 8px 0 rgba(75,63,196,0.10)',
+        'card-glow':   '0 4px 24px 0 rgba(20,22,28,0.06), 0 1px 3px 0 rgba(20,22,28,0.04)',
       },
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4,0,0.6,1) infinite',

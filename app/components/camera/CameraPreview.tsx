@@ -101,7 +101,7 @@ export const CameraPreview: React.FC<CameraPreviewProps> = ({
     <div className={`relative flex flex-col items-end gap-3 select-none ${className}`}>
       {/* Pop-up Video Bubble when Camera is Active */}
       {isCameraActive && showPreviewBubble && (
-        <div className="relative w-48 sm:w-56 aspect-video rounded-2xl overflow-hidden border border-brand-cyan/40 bg-[#050508] shadow-neon-cyan backdrop-blur-xl animate-fade-in">
+        <div className="relative w-48 sm:w-56 aspect-video rounded-2xl overflow-hidden border border-brand-cyan/40 bg-slate-900 shadow-neon-cyan backdrop-blur-xl animate-fade-in">
           <video
             ref={videoRef}
             autoPlay
@@ -117,7 +117,7 @@ export const CameraPreview: React.FC<CameraPreviewProps> = ({
           {/* Close / Hide bubble button */}
           <button
             onClick={() => setShowPreviewBubble(false)}
-            className="absolute top-2 right-2 p-1 rounded-md bg-black/60 hover:bg-black/90 text-[#8892a4] hover:text-white transition-colors"
+            className="absolute top-2 right-2 p-1 rounded-md bg-black/60 hover:bg-black/90 text-[#9a9a9a] hover:text-white transition-colors"
             title="Minimize Preview Bubble"
           >
             <X className="w-3 h-3" />
@@ -126,7 +126,7 @@ export const CameraPreview: React.FC<CameraPreviewProps> = ({
       )}
 
       {/* Minimal Icon Control Pill */}
-      <div className="flex items-center gap-2 px-3 py-2 rounded-2xl bg-[#08080f]/90 border border-white/10 backdrop-blur-xl shadow-card-glow">
+      <div className="flex items-center gap-2 px-3 py-2 rounded-2xl bg-white/95 border border-surface-border backdrop-blur-xl shadow-card-glow">
         {/* Camera Icon Button */}
         <div className="relative group">
           <button
@@ -134,7 +134,7 @@ export const CameraPreview: React.FC<CameraPreviewProps> = ({
             className={`w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-200 ${
               isCameraActive
                 ? 'bg-brand-cyan/20 border border-brand-cyan text-brand-cyan shadow-neon-cyan'
-                : 'bg-white/5 border border-white/10 text-[#8892a4] hover:text-white hover:bg-white/10 hover:border-white/20'
+                : 'bg-surface-subtle border border-surface-border text-ink-muted hover:text-ink hover:bg-surface-hover hover:border-brand-cyan/40'
             }`}
             title={isCameraActive ? 'Turn Off Camera' : 'Enable Camera'}
             aria-label={isCameraActive ? 'Turn Off Camera' : 'Enable Camera'}
@@ -148,7 +148,7 @@ export const CameraPreview: React.FC<CameraPreviewProps> = ({
             )}
           </button>
           {/* Tooltip */}
-          <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-md bg-[#050508] border border-white/10 text-[10px] font-semibold text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+          <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-md bg-ink border border-ink/20 text-[10px] font-semibold text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
             {isCameraActive ? 'Camera On' : 'Camera Off'}
           </span>
         </div>
@@ -159,8 +159,8 @@ export const CameraPreview: React.FC<CameraPreviewProps> = ({
             onClick={onToggleMic}
             className={`w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-200 ${
               isMicActive
-                ? 'bg-emerald-500/20 border border-emerald-500/60 text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.3)]'
-                : 'bg-rose-500/20 border border-rose-500/60 text-rose-400 shadow-[0_0_20px_rgba(244,63,94,0.3)]'
+                ? 'bg-emerald-500/20 border border-emerald-500/60 text-emerald-600 shadow-[0_0_20px_rgba(16,185,129,0.3)]'
+                : 'bg-rose-500/20 border border-rose-500/60 text-rose-600 shadow-[0_0_20px_rgba(244,63,94,0.3)]'
             }`}
             title={isMicActive ? 'Mute Microphone' : 'Unmute Microphone'}
             aria-label={isMicActive ? 'Mute Microphone' : 'Unmute Microphone'}
@@ -172,7 +172,7 @@ export const CameraPreview: React.FC<CameraPreviewProps> = ({
             )}
           </button>
           {/* Tooltip */}
-          <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-md bg-[#050508] border border-white/10 text-[10px] font-semibold text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+          <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-md bg-ink border border-ink/20 text-[10px] font-semibold text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
             {isMicActive ? 'Mic Active' : 'Mic Muted'}
           </span>
         </div>
@@ -181,7 +181,7 @@ export const CameraPreview: React.FC<CameraPreviewProps> = ({
         <div className="flex flex-col gap-1 pl-1 pr-0.5">
           <div
             className={`w-1.5 h-1.5 rounded-full ${
-              isCameraActive ? 'bg-brand-cyan pulse-cyan' : 'bg-[#3a3a50]'
+              isCameraActive ? 'bg-brand-cyan pulse-cyan' : 'bg-slate-300'
             }`}
             title={isCameraActive ? 'Camera Active' : 'Camera Inactive'}
           />

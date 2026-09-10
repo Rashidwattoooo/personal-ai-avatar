@@ -38,16 +38,16 @@ export const AvatarStatus: React.FC<AvatarStatusProps> = ({
           {isSpeaking && (
             <span className="absolute -top-1 -right-1 flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-violet opacity-75" />
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-brand-violet border-2 border-[#050508]" />
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-brand-violet border-2 border-white" />
             </span>
           )}
         </div>
         <div>
           <div className="flex items-center gap-2">
-            <span className="text-sm font-bold text-white tracking-tight">Personal AI Assistant</span>
+            <span className="text-sm font-bold text-ink tracking-tight">Personal AI Assistant</span>
             <StatusBadge status={getBadge()} size="sm" />
           </div>
-          <p className="text-[11px] text-[#8892a4]">
+          <p className="text-[11px] text-ink-muted">
             {isSpeaking  ? 'Generating real-time response...' :
              isListening ? 'Listening to your voice...' :
              'Realtime CVI session active'}
@@ -73,7 +73,7 @@ export const AvatarStatus: React.FC<AvatarStatusProps> = ({
         {/* Mic status */}
         <div className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold border ${
           micStatus === 'muted'
-            ? 'bg-rose-500/10 border-rose-500/30 text-rose-300'
+            ? 'bg-rose-500/10 border-rose-500/30 text-rose-600'
             : 'bg-brand-cyan/5 border-brand-cyan/20 text-brand-cyan'
         }`}>
           {micStatus === 'muted'
@@ -84,7 +84,7 @@ export const AvatarStatus: React.FC<AvatarStatusProps> = ({
 
         {/* RAG badge */}
         {hasRagKnowledge && (
-          <div className="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-brand-violet/10 border border-brand-violet/30 text-purple-300 text-xs font-semibold">
+          <div className="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-brand-violet/10 border border-brand-violet/30 text-brand-violet text-xs font-semibold">
             <BookOpen className="w-3.5 h-3.5 text-brand-violet" />
             RAG On
           </div>

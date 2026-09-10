@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  // Disabled: StrictMode double-invokes effects in dev, which needlessly tears down
+  // and rebuilds the live Daily/WebRTC call and can end the Tavus conversation mid-join.
+  reactStrictMode: false,
   poweredByHeader: false,
 };
 

@@ -53,24 +53,24 @@ export const AvatarStage: React.FC<AvatarStageProps> = ({
 
   return (
     <div
-      className="relative w-full rounded-3xl border border-white/[0.08] overflow-hidden card-glow shadow-card-glow"
+      className="relative w-full rounded-3xl border border-surface-border overflow-hidden bg-surface-subtle shadow-card-glow"
       style={{ minHeight: '520px', aspectRatio: '16/9', maxHeight: '640px' }}
     >
       {/* Background ambient orbs */}
-      <div className="absolute inset-0 dot-grid-bg opacity-50 pointer-events-none" />
-      <div className="orb orb-cyan   w-80 h-80 -top-20   -left-20 opacity-30"  />
-      <div className="orb orb-violet w-72 h-72  bottom-0 -right-10 opacity-25" />
+      <div className="absolute inset-0 dot-grid-bg opacity-70 pointer-events-none" />
+      <div className="orb orb-cyan   w-80 h-80 -top-20   -left-20 opacity-40"  />
+      <div className="orb orb-violet w-72 h-72  bottom-0 -right-10 opacity-40" />
 
       {/* Top badge */}
       <div className="absolute top-4 left-4 z-10 pointer-events-none">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-cyan/25 bg-[#050508]/70 backdrop-blur-md text-xs font-semibold text-brand-cyan tracking-wide">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-cyan/25 bg-white/80 backdrop-blur-md text-xs font-semibold text-brand-cyan tracking-wide shadow-sm">
           <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan pulse-cyan" />
-          Your Personal AI Assistant
+          Agentix AI Assistant
         </div>
       </div>
 
       {/* Realtime label */}
-      <div className="absolute top-4 right-4 z-10 hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#050508]/70 backdrop-blur-md border border-white/5 text-[11px] font-semibold text-[#8892a4] tracking-widest uppercase pointer-events-none">
+      <div className="absolute top-4 right-4 z-10 hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-surface-border text-[11px] font-semibold text-ink-muted tracking-widest uppercase pointer-events-none shadow-sm">
         Realtime CVI
       </div>
 
@@ -81,6 +81,7 @@ export const AvatarStage: React.FC<AvatarStageProps> = ({
             conversationUrl={conversationUrl}
             conversationId={conversationId || undefined}
             isMicMuted={isMicMuted}
+            cameraStream={cameraStream}
             onStateChange={onStateChange}
             onError={onError}
             onLeave={onLeave}
